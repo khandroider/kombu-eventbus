@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "kombu-eventbus"
+version = "0.1.0"
+description = "Small event bus over RabbitMQ: a shared JSON envelope, confirmed publishing and a reconnecting consumer. Python counterpart of khandroider/laravel-eventbus."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [{ name = "Kaiyrkhan" }]
+keywords = ["rabbitmq", "amqp", "kombu", "event-bus", "celery"]
+dependencies = ["kombu>=5.3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/khandroider/kombu-eventbus"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kombu_eventbus"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
